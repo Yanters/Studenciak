@@ -1,4 +1,5 @@
 'use client'
+import Title from '@/components/Title'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
@@ -13,9 +14,7 @@ export default function Home() {
 
   return (
     <div className='container flex flex-col items-center justify-center min-h-screen min-w-full py-2'>
-      <h1 className='text-6xl font-bold text-center dark:text-cyan-100 text-cyan-500'>
-        Studenciak
-      </h1>
+      <Title title='Home' />
       <div>
         The current theme is: {theme}
         <br />
