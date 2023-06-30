@@ -8,7 +8,7 @@ const LogoItem = ({ text, icon }: { text: string; icon: React.ReactNode }) => {
       href='/'
     >
       <div className='flex flex-row items-center space-x-3'>
-        <div className='w-12 h-12'>{icon}</div>
+        <div className='w-12 h-12 text-info'>{icon}</div>
         <div className='text-3xl font-bold-500'>{text}</div>
       </div>
     </Link>

@@ -1,4 +1,5 @@
 'use client'
+import BreakLine from '@/components/BreakLine'
 import Title from '@/components/Title'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
@@ -15,6 +16,7 @@ export default function Home() {
   return (
     <div className='container flex flex-col items-center justify-center min-h-screen min-w-full py-2'>
       <Title title='Home' />
+      <BreakLine />
       <div>
         The current theme is: {theme}
         <br />
