@@ -19,7 +19,7 @@ const Sidebar = () => {
       className={
         'sticky top-0 bg-secondary md:min-h-screen md:h-screen flex flex-col items-center justify-between' +
         (isOpen ? ' md:min-w-[300px]' : ' md:min-w-[80px] min-h-screen') +
-        ' md:flex '
+        ' md:flex overflow-hidden'
       }
     >
       <div className='w-full h-fit '>
@@ -34,7 +34,7 @@ const Sidebar = () => {
         <MenuItem
           text='Calendar'
           icon={<BsCalendarWeek className='w-full h-full' />}
-          location='/'
+          location='/calendar'
           isOpen={isOpen}
           setIsOpen={setIsOpen}
         />
