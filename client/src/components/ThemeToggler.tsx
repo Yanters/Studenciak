@@ -40,11 +40,11 @@ const ThemeToggler = ({ isOpen }: { isOpen: boolean }) => {
             <BsFillSunFill className='w-7 h-7' />
           )}
         </div>
-        {isOpen && (
-          <div className='text-2xl font-bold-500'>
-            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-          </div>
-        )}
+        <div
+          className={'text-2xl font-bold-500 ' + (isOpen ? '' : ' md:hidden')}
+        >
+          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+        </div>
       </div>
     </button>
   )

@@ -6,12 +6,31 @@ const MenuItem = ({
   icon,
   location,
   isOpen,
+  setIsOpen,
 }: {
   text: string
   icon: React.ReactNode
   location: string
   isOpen: boolean
+  setIsOpen?: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
+  // detect if we are on mobile or desktop by reading the window width
+  // if the window width is less than 768px, we are on mobile
+  // if the window width is more than 768px, we are on desktop
+
+  const isMobile = () => {
+    if (typeof window !== 'undefined') {
+      return window.innerWidth < 768
+    }
+    return false
+  }
+
+  const toggleSidebar = () => {
+    if (isMobile()) {
+      setIsOpen && setIsOpen(!isOpen)
+    }
+  }
+
   return (
     <Link
       className={
@@ -21,6 +40,7 @@ const MenuItem = ({
           : ' justify-center')
       }
       href={location}
+      onClick={toggleSidebar}
     >
       <div className='flex flex-row space-x-4'>
         <div className='w-8 h-8 text-info'>{icon}</div>

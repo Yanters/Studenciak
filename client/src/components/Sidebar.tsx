@@ -15,59 +15,62 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true)
 
   return (
-    <>
-      <div
-        className={
-          'sticky top-0 bg-secondary md:min-h-screen md:h-screen flex flex-col items-center justify-between' +
-          (isOpen ? ' md:min-w-[300px]' : ' md:min-w-[80px]') +
-          ' md:flex h-6 min-w-full'
-        }
-      >
-        <div className='w-full h-fit '>
-          <LogoItem
-            text='Studenciak'
-            icon={<PiStudentBold className='w-12 h-12' />}
-            isOpen={isOpen}
-            setIsOpen={setIsOpen}
-          />
-          <BreakLine />
+    <div
+      className={
+        'sticky top-0 bg-secondary md:min-h-screen md:h-screen flex flex-col items-center justify-between' +
+        (isOpen ? ' md:min-w-[300px]' : ' md:min-w-[80px] min-h-screen') +
+        ' md:flex '
+      }
+    >
+      <div className='w-full h-fit '>
+        <LogoItem
+          text='Studenciak'
+          icon={<PiStudentBold className='w-12 h-12' />}
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        {isOpen ? <BreakLine className='hidden md:flex' /> : <BreakLine />}
 
-          <MenuItem
-            text='Calendar'
-            icon={<BsCalendarWeek className='w-full h-full' />}
-            location='/calendar'
-            isOpen={isOpen}
-          />
-          <MenuItem
-            text='Groups'
-            icon={<MdGroups className='w-full h-full' />}
-            location='/groups'
-            isOpen={isOpen}
-          />
-          <MenuItem
-            text='Tester'
-            icon={<PiExam className='w-full h-full' />}
-            location='/tester'
-            isOpen={isOpen}
-          />
-          <MenuItem
-            text='Lists'
-            icon={<LiaClipboardListSolid className='w-full h-full' />}
-            location='/lists'
-            isOpen={isOpen}
-          />
-        </div>
-        <div className='w-full h-fit mb-4'>
-          <ThemeToggler isOpen={isOpen} />
-          <MenuItem
-            text='Logout'
-            icon={<LuLogOut className='w-full h-full' />}
-            location='/logout'
-            isOpen={isOpen}
-          />
-        </div>
+        <MenuItem
+          text='Calendar'
+          icon={<BsCalendarWeek className='w-full h-full' />}
+          location='/'
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <MenuItem
+          text='Groups'
+          icon={<MdGroups className='w-full h-full' />}
+          location='/groups'
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <MenuItem
+          text='Tester'
+          icon={<PiExam className='w-full h-full' />}
+          location='/tester'
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+        <MenuItem
+          text='Lists'
+          icon={<LiaClipboardListSolid className='w-full h-full' />}
+          location='/lists'
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
       </div>
-    </>
+      <div className='w-full h-fit md:mb-4'>
+        <ThemeToggler isOpen={isOpen} />
+        <MenuItem
+          text='Logout'
+          icon={<LuLogOut className='w-full h-full' />}
+          location='/logout'
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+        />
+      </div>
+    </div>
   )
 }
 
