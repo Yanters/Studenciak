@@ -2,11 +2,10 @@
 import React from 'react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import MenuItem from './MenuItem'
 
 import { BsFillSunFill, BsMoonFill } from 'react-icons/bs'
 
-const ThemeToggler = () => {
+const ThemeToggler = ({ isOpen }: { isOpen: boolean }) => {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
@@ -25,7 +24,12 @@ const ThemeToggler = () => {
 
   return (
     <button
-      className='w-full h-auto flex flex-row items-center justify-start px-10 py-3 hover:bg-secondary-200'
+      className={
+        'w-full h-auto flex flex-row items-center py-3 hover:bg-secondary-200' +
+        (isOpen
+          ? ' justify-start pl-8 md:h-auto hidden md:flex'
+          : ' justify-center')
+      }
       onClick={toggleTheme}
     >
       <div className='flex flex-row space-x-3'>
@@ -36,9 +40,11 @@ const ThemeToggler = () => {
             <BsFillSunFill className='w-7 h-7' />
           )}
         </div>
-        <div className='text-2xl font-bold-500'>
-          {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-        </div>
+        {isOpen && (
+          <div className='text-2xl font-bold-500'>
+            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
+          </div>
+        )}
       </div>
     </button>
   )

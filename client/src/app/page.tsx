@@ -23,6 +23,46 @@ export default function Home() {
         <button onClick={() => setTheme('light')}>Light Mode</button>{' '}
         <button onClick={() => setTheme('dark')}>Dark Mode</button>
       </div>
+      <Title title='Home' />
+      <BreakLine />
+      <div>
+        The current theme is: {theme}
+        <br />
+        <button onClick={() => setTheme('light')}>Light Mode</button>{' '}
+        <button onClick={() => setTheme('dark')}>Dark Mode</button>
+      </div>
+      <Title title='Home' />
+      <BreakLine />
+      <div>
+        The current theme is: {theme}
+        <br />
+        <button onClick={() => setTheme('light')}>Light Mode</button>{' '}
+        <button onClick={() => setTheme('dark')}>Dark Mode</button>
+      </div>
+      <Title title='Home' />
+      <BreakLine />
+      <div>
+        The current theme is: {theme}
+        <br />
+        <button onClick={() => setTheme('light')}>Light Mode</button>{' '}
+        <button onClick={() => setTheme('dark')}>Dark Mode</button>
+      </div>
+      <Title title='Home' />
+      <BreakLine />
+      <div>
+        The current theme is: {theme}
+        <br />
+        <button onClick={() => setTheme('light')}>Light Mode</button>{' '}
+        <button onClick={() => setTheme('dark')}>Dark Mode</button>
+      </div>
+      <Title title='Home' />
+      <BreakLine />
+      <div>
+        The current theme is: {theme}
+        <br />
+        <button onClick={() => setTheme('light')}>Light Mode</button>{' '}
+        <button onClick={() => setTheme('dark')}>Dark Mode</button>
+      </div>
     </div>
   )
 }
