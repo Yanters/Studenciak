@@ -38,6 +38,11 @@ module.exports = {
         current: 'currentColor',
       },
     },
+    transitionProperty: {
+      width: '"width"',
+      height: '"height"',
+      'width-height': '"width", "height"',
+    },
   },
   plugins: [],
 }
