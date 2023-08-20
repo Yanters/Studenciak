@@ -1,0 +1,21 @@
+version: '3.8'
+
+networks:
+  default:
+    external: false
+    name: studenciak-app-local
+
+services:
+  studenciak-app-postgres:
+    image: 'postgres:13-alpine'
+    command: postgres -c 'max_connections=1000'
+    restart: always
+    container_name: studenciak-app-postgres-local
+    environment:
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_DATABASE=${Studenciak}
+    volumes:
+      - ./db_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
